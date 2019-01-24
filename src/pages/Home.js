@@ -6,9 +6,17 @@ export default class Home extends React.Component {
     super(props)
     this.state = {}
   }
+  // componentDidMount() {
+  //   const navLiEls = [].slice.call(document.querySelectorAll('.nav li'))
+  //   navLiEls.forEach((item, index) => {
+  //     item.classList.remove('active')
+  //   })
+  //   document.getElementById('home').classList.add('active')
+  // }
   render () {
+    console.log(this.props)
     return (
-      <div>home</div>
+      <div ref="div" onClick={() => console.log(this.refs.div)}>home</div>
     )
   }
 }
