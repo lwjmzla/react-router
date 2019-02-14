@@ -1,6 +1,19 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom'
 
+class Child extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {}
+  }
+  render () {
+    console.log(this.props)
+    return (
+      <div>child</div>
+    )
+  }
+}
+
 export default class Home extends React.Component {
   constructor (props) {
     super(props)
@@ -16,7 +29,10 @@ export default class Home extends React.Component {
   render () {
     console.log(this.props)
     return (
-      <div ref="div" onClick={() => console.log(this.refs.div)}>home</div>
+      <div ref="div" onClick={() => console.log(this.refs.div)}>
+        home
+        <Route path="/home/child" component={Child}></Route>
+      </div>
     )
   }
 }
